@@ -41,8 +41,8 @@ def capcha(driver):
         # Вводим капчу, логин и пароль и проходим далее
         # надо получать данные из файла
         login = str(configini('login')).replace("\n","")
-
         password = str(configini('password')).replace("\n","")
+
         driver.find_element_by_xpath('/html/body/div/div[2]/div/form/ul/li[1]/input').send_keys(login)
         driver.find_element_by_xpath('/html/body/div/div[2]/div/form/ul/li[2]/input').send_keys(password)
         driver.find_element_by_xpath('/html/body/div/div[2]/div/form/ul/li[4]/input').send_keys(captcha_text)
@@ -77,7 +77,7 @@ def main():
     while i <= lines:
         #читаем текст сообщения
         t = open('text.txt', 'r')
-        text = t.readlines()
+        text = t.read()
         #Заголовок сообщения
         t2 = open('title.txt', 'r')
         title = t2.readlines()

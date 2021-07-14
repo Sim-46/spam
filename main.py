@@ -41,8 +41,8 @@ def capcha(driver):
         print("captcha text " + captcha_text)
         # Вводим капчу, логин и пароль и проходим далее
         # надо получать данные из файла
-        login = str(configini('login'))
-        password = str(configini('password'))
+        login = str(configini('login')).replace("\n","")
+        password = str(configini('password')).replace("\n","")
         driver.find_element_by_xpath('/html/body/div/div[2]/div/form/ul/li[1]/input').send_keys(login)
         driver.find_element_by_xpath('/html/body/div/div[2]/div/form/ul/li[2]/input').send_keys(password)
         driver.find_element_by_xpath('/html/body/div/div[2]/div/form/ul/li[4]/input').send_keys(captcha_text)
@@ -67,7 +67,7 @@ def main():
     capcha(driver)
 
     # n = open('number1.txt', 'r')
-    i = 2244
+    i = 5093
     # f = open('pars.txt', 'w')
 
     while i <= 10000:
